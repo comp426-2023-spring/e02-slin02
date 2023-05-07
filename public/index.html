@@ -1,12 +1,93 @@
 <html>
     <head>
-        <title>Rock</title>
+        <title>Rock, Paper, Scissors</title>
+		<link href="./styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<script src="./scripts.js"></script>
         <!-- Link to your script file(s) and CSS in here somewhere -->
     </head>
     <body>
+        <div class="home-page">
+            <h1 class="header">Let's play!</h1>
+            <div class="options">
+                <div class="buttons">
+                    <button class="rps-button" onclick="playRPS()">RPS</button>
+                    <button class="rpsls-button" onclick="playRPSLS()">RPSLS</button>
+                </div>
+
+                <div class="game-type-switch">
+                    <label class="switch">
+                        <input type="checkbox" onchange="setChoice()">
+                        <span class="slider round"></span>
+                    </label>
+                    <p class="game-type">Play Against Opponent></p>
+                </div>
+            </div>
+
+            <!--game view-->
+            <div class="game-view">
+                <div class="dropdown">
+                    <label for="player-choice">Choose an option:</label>
+                    <select name="choices" id="choices">
+                        <option value="rock">Rock</option>
+                        <option value="paper">Paper</option>
+                        <option value="scissors">Scissors</option>
+                        <option value="lizard" class="rpsls">Lizard</option>
+                        <option value="spock" class="rpsls">Spock</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="play-button">Play!</button>
+                    <button class="help-button" onclick="openRules()">How to Play</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pop-up">
+            <div class="rules">
+                <p class="version">How to Play Classic Rock Paper Scissors</p>
+                <ul class="info">
+                <li>Scissors CUTS Paper</li>
+                <li>Paper COVERS Rock</li>
+                <li>Rock CRUSHES Scissors</li>
+            </ul>
+            </div>
+            <div>
+                <p class="version">How to Play Rock Paper Scissors Lizard Spock</p>
+                <ul class="info">
+                    <li>Scissors CUTS Paper</li>
+                    <li>Paper COVERS Rock</li>
+                    <li>Rock SMOOSHES Lizard</li>
+                    <li>Lizard POISONS Spock</li>
+                    <li>Spock SMASHES Scissors</li>
+                    <li>Scissors DECAPITATES Lizard</li>
+                    <li>Lizard EATS Paper</li>
+                    <li>Paper DISPROVES Spock</li>
+                    <li>Spock VAPORIZES Rock</li>
+                    <li>Rock CRUSHES Scissors</li>
+                </ul>
+            </div>
+            <button class="close-button" onclick="closeRules()">Close</button>
+        </div>
+
+        <div class="results-pop-up">
+            <div class="results">
+                <p id="player" class="result-item"></p>
+                <p id="opponent" class="result-item"></p>
+                <p id="result" class="result-item"></p>
+            </div>
+            <button class="close-button" onclick="closeResults()">Close</button>
+        </div>
+        
+        
+
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+    
+    <!-- You will want to include something hidden by default, like a <div> or <p> that you can show to -->
+    <!-- display the results of the game. Your startOver() function should also clear the result and hide -->
+    <!-- the block again. -->
 
     </body>
 </html>
