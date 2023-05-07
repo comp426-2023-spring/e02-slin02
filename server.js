@@ -2,6 +2,7 @@
 // Create require function 
 // https://nodejs.org/docs/latest-v18.x/api/module.html#modulecreaterequirefilename
 import { createRequire } from 'node:module';
+import { rps, rpsls } from './lib/rpsls.js';
 const require = createRequire(import.meta.url);
 // The above two lines allow us to use ES methods and CJS methods for loading
 // dependencies.
@@ -93,14 +94,6 @@ app.get('/app/rps/play', (req, res) => {
 
 app.get('/app/rpsls/play', (req, res) => {
 	res.status(200).send(rpsls(req.query.shot));
-})
-
-app.post('/app/rps/play', (req, res) => {
-	res.status(200).send(rps(req.body.shot));
-})
-
-app.post('/app/rpsls/play', (req, res) => {
-	res.status(200).send(rpsls(req.body.shot));
 })
 
 app.get('/app/rps/play/:arg', (req, res) => {

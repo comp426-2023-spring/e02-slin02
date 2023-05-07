@@ -22,8 +22,8 @@ function playRPSLS() {
     var spock = document.getElementsByClassName("rpsls")[1];
     var rps_button = document.getElementsByClassName("rps-button")[0];
     var rpsls_button = document.getElementsByClassName("rpsls-button")[0];
-    lizard.style.display="inline-block";
-    spock.style.display="inline-block";
+    lizard.style.display="inline";
+    spock.style.display="inline";
     rps_button.style.opacity="50%";
     rpsls_button.style.opacity="100%";
     rps=false;
@@ -31,22 +31,22 @@ function playRPSLS() {
 
 function setChoice() {
     var game=document.getElementsByClassName("dropdown")[0];
-    if (game.style.display=="inline-block") {
+    if (game.style.display=="inline") {
         game.style.display="none";
         opponent = false;
     } else {
-        game.style.display="inline-block";
+        game.style.display="inline";
         opponent = true;
     }
 }
 
 function openRules() {
-    var rules = document.getElementsByClassName("rules")[0];
-    rules.style.display="inline-block";
+    var rules = document.getElementsByClassName("pop-up")[0];
+    rules.style.display="inline";
 }
 
-function closeRoles() {
-    var rules = document.getElementsByClassName("rules")[0];
+function closeRules() {
+    var rules = document.getElementsByClassName("pop-up")[0];
     rules.style.display="none";
 }
 
@@ -55,12 +55,12 @@ function reset() {
 }
 
 function closeResults() {
-    var pop_up = document.getElementsByClassName("results")[0];
+    var pop_up = document.getElementsByClassName("results-pop-up")[0];
     pop_up.style.display="none";
 }
 
 async function play() {
-    var e = document.getElementsById("dropdown")
+    var e = document.getElementById("choices");
     var shot = e.value;
     var player = document.getElementById("player");
     var opponent = document.getElementById("opponent");
@@ -86,6 +86,11 @@ async function play() {
         if (opponent && shot) {
             const response = await fetch(`app/rpsls/play/${shot}`);
             const data = await response.json();
+
+            player.innerHTML = `Player: ${data.player}.`
+            opponent.innerHTML = `Opponent: ${data.opponent}.`
+            result.innerHTML = `Result: ${data.result}.`
+            pop_up.style.display = "inline"
             console.log(data);
         } else {
             const response = await fetch(`app/rpsls/play`)

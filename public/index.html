@@ -19,17 +19,18 @@
                 <div class="game-type-switch">
                     <label class="switch">
                         <input type="checkbox" onchange="setChoice()">
-                        <span class="slider round"></span>
+                        <span class="slider"></span>
                     </label>
-                    <p class="game-type">Play Against Opponent</p>
+                    <p class="game-type">Play Against Opponent?</p>
                 </div>
             </div>
 
             <!--game view-->
             <div class="game-view">
                 <div class="dropdown">
-                    <label for="choices">Choose an option:</label>
+                    <label for="choices">Your move:</label>
                     <select name="choices" id="choices">
+                        <option disabled selected value> -- select  --</option>
                         <option value="rock">Rock</option>
                         <option value="paper">Paper</option>
                         <option value="scissors">Scissors</option>
@@ -38,9 +39,9 @@
                     </select>
                 </div>
                 <div>
-                    <button class="play-button">Play!</button>
+                    <button class="play-button" onclick="play()">Play!</button>
                     <button class="reset-button" onclick="reset()">Reset</button>
-                    <button class="help-button" onclick="openRules()">How to Play</button>
+                    <button class="help-button" onclick="openRules()">?</button>
                 </div>
             </div>
         </div>
