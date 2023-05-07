@@ -27,7 +27,7 @@
             <!--game view-->
             <div class="game-view">
                 <div class="dropdown">
-                    <label for="player-choice">Choose an option:</label>
+                    <label for="choices">Choose an option:</label>
                     <select name="choices" id="choices">
                         <option value="rock">Rock</option>
                         <option value="paper">Paper</option>
@@ -38,6 +38,7 @@
                 </div>
                 <div>
                     <button class="play-button">Play!</button>
+                    <button class="reset-button" onclick="reset()">Reset</button>
                     <button class="help-button" onclick="openRules()">How to Play</button>
                 </div>
             </div>
