@@ -12,8 +12,8 @@
             <h1 class="header">Let's play!</h1>
             <div class="options">
                 <div class="buttons">
-                    <button class="rps-button" onclick="playRPS()">RPS</button>
-                    <button class="rpsls-button" onclick="playRPSLS()">RPSLS</button>
+                    <button class="rps-button" type="button" onclick="playRPS()">RPS</button>
+                    <button class="rpsls-button" type="button" onclick="playRPSLS()">RPSLS</button>
                 </div>
 
                 <div class="game-type-switch">
@@ -39,8 +39,8 @@
                     </select>
                 </div>
                 <div>
-                    <button class="play-button" onclick="play()">Play!</button>
-                    <button class="reset-button" onclick="reset()">Reset</button>
+                    <button class="play-button" type="button"type="button"onclick="play()">Play!</button>
+                    <button class="reset-button" otype="button" nclick="reset()">Reset</button>
                     <button class="help-button" onclick="openRules()">?</button>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                     <li>Rock CRUSHES Scissors</li>
                 </ul>
             </div>
-            <button class="close-button" onclick="closeRules()">Close</button>
+            <button class="close-button" type="button" onclick="closeRules()">Close</button>
         </div>
 
         <div class="results-pop-up">
@@ -79,11 +79,10 @@
                 <p id="opponent" class="result-item"></p>
                 <p id="result" class="result-item"></p>
             </div>
-            <button class="close-button" onclick="closeResults()">Close</button>
+            <button class="close-button" type="button" onclick="closeResults()">Close</button>
         </div>
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-    
     <!-- You will want to include something hidden by default, like a <div> or <p> that you can show to -->
     <!-- display the results of the game. Your startOver() function should also clear the result and hide -->
     <!-- the block again. -->
