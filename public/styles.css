@@ -110,10 +110,11 @@ p {
     border-style: solid;
     margin-right: 1rem;
   }
-  .play-button:hover {
+
+.play-button:hover {
     background-color: #fd50e3;
      cursor: pointer;
-   }
+}
   
 .reset-button {
     padding: 0.5rem 1rem;
